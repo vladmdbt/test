@@ -2,16 +2,13 @@
 version: 2
 
 models:
-    - name: my_first_dbt_model
-      description: "A starter dbt model"
+    - name: my_child_dbt_model
+      description: "Inherited dbt model"
+      group: platform
+      access: public
       columns:
           - name: id
             description: "The primary key for this table"
-
-
-    - name: my_second_dbt_model
-      description: "A starter dbt model"
-      columns:
-          - name: id
-            description: "The primary key for this table"
+            tests:
+              - unique
 
