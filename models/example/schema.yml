@@ -2,17 +2,35 @@
 version: 2
 
 models:
+    - name: first_model
+      columns:
+        - name: id
+          description: "The primary key for this table"
+          tests:
+            - unique
+          data_type: int
+
     - name: my_child_dbt_model
-      description: "Inherited dbt model"
+      latest_version: 2
       group: platform
       access: public
       config:
         contract:
           enforced: true
       columns:
-          - name: id
-            description: "The primary key for this table"
-            tests:
-              - unique
-            data_type: int
-
+        - name: id
+          description: "The primary key for this table"
+          tests:
+            - unique
+          data_type: int
+        - name: name
+          description: "The name of the person"
+          data_type: string
+        - name: resident
+          description: "Checks if the person is a resident"
+          data_type: boolean
+      versions:
+        - v: 1
+          description: "First version of the child model."
+        - v: 2
+          description: "Second version of the child model."
