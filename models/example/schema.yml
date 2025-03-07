@@ -6,9 +6,13 @@ models:
       description: "Inherited dbt model"
       group: platform
       access: public
+      config:
+        contract:
+          enforced: true
       columns:
           - name: id
             description: "The primary key for this table"
             tests:
               - unique
+            data_type: int
 
