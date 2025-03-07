@@ -1,0 +1,5 @@
+groups:
+  - name: platform
+    owner:
+      email: vlad.moldoveanu@dbtlabs.com
+      name: Vlad Moldoveanu
